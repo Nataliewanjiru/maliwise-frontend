@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Renderer2,PLATFORM_ID,Inject, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';  
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -21,7 +22,7 @@ export class LandingPageComponent {
   acAuto = 2500;
   autoSlider: any;
 
-  constructor(private renderer: Renderer2,private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(private renderer: Renderer2,public router: Router,private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   features = [
     { title: 'Portfolio Management', description: 'Manage multiple investment portfolios with ease.' },
@@ -132,5 +133,9 @@ export class LandingPageComponent {
 
   clearRequestInterval(handle: any) {
     cancelAnimationFrame(handle.value);
+  }
+
+  goToRegister() {
+    this.router.navigate(['/register']);
   }
 }
