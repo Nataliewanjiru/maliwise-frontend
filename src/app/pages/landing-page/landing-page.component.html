@@ -1,9 +1,60 @@
 <div class="hero-section text-white d-flex flex-column justify-content-center align-items-center">
     <div class="overlay"></div>
     <div class="hero-content text-center">
-      <h1 style="color: #021024;"  class="display-4 fw-bold">Welcome to Maliwise</h1>
+      <h1 style="color: #021024;"  class="display-4 fw-bold">Welcome to Maliwise-Smart Investment Managment</h1>
+      <div style="height: 10px;"></div>
       <p class="lead" >Smart portfolio management, simplified.</p>
-      <a routerLink="/register" class="btn btn-light mt-3" style="color: #021024;">Get Started</a>
+      <a routerLink="/register" class="btn btn-light mt-3" style="color:white; padding-right: 20px; padding-left: 20px;background-color: #021024; border: #021024; padding-top: 8px; padding-bottom: 8px;">Get Started</a>
     </div>
   </div>
+
+  <section class="key-features" style="background-color: #C1E8FF;">
+    <h2 style="padding-top: 30px; padding-bottom: 30px; color: #021024;" class="text-center mt-5 mb-4">Key Features</h2>
+    <div class="slider--teams desktop-view" #sliderTeams>
+      <div class="slider--teams__team">
+        <ul id="list" class="cf" #list>
+          <li *ngFor="let feature of features">
+            <figure>
+              <figcaption class="card">
+                <div class="card-body text-center">
+                  <i class="fas fa-briefcase fa-3x mb-3"></i>
+                  <div class="circle-with-text"><img src="assets/images/maliwise3.png"/></div>
+                  <h5 class="card-title">{{ feature.title }}</h5>
+                  <div style="height: 50px;"></div>
+                  <p class="card-text">{{ feature.description }}</p>
+                </div>
+              </figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+  <div id="mobileCarousel" class="carousel slide carousel-fade mobile-view" data-bs-touch="true"   data-bs-ride="carousel"
+  data-bs-interval="3000" style="background-color: #C1E8FF;" >
+    <div class="carousel-inner">
+      <div *ngFor="let feature of features; let i = index" class="carousel-item" [class.active]="i === 0">
+        <div class="card floating-card mx-auto my-3" style="width: 90%;">
+          <div class="card-body text-center">
+            <i class="fas fa-briefcase fa-3x mb-3"></i>
+            <div class="circle-with-text"><img src="assets/images/maliwise3.png"/></div>
+            <h5 class="card-title">{{ feature.title }}</h5>
+            <div style="height: 50px;"></div>
+            <p class="card-text">{{ feature.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#mobileCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mobileCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
   

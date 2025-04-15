@@ -52,3 +52,187 @@
     z-index: 3;
   }
   
+  $easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
+  $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+  $easeInOutSine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+  
+  *,
+  *:after,
+  *:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  ul li {
+    list-style-type: none;
+  }
+  
+  .slider--teams {
+    position: relative;
+    left: 50%;
+    max-width: 100%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  
+    .slider--teams__team {
+      position: relative;
+      overflow: hidden;
+    }
+  }
+  
+  #list {
+    position: relative;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+  
+    li {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+  
+      figure {
+        cursor: pointer;
+        opacity: 0.5;
+        margin-top: 2rem;
+        transition: transform 450ms $easeInOutSine, opacity 450ms ease-in-out;
+        transform: scale(0.5);
+  
+        &:hover {
+          opacity: 0.8;
+          transform: scale(0.6);
+        }
+  
+        &:active {
+          opacity: 1;
+          transform: scale(0.7);
+        }
+  
+        > div {
+          border-radius: 5px;
+          margin: 2rem auto;
+          width: 120px;
+          height: 120px;
+          transform: rotate(45deg);
+        }
+      }
+  
+      // Background positioning examples
+      &:nth-child(1) figure > div > div { background-position: 0% 0%; }
+      &:nth-child(2) figure > div > div { background-position: 0% 20%; }
+      &:nth-child(3) figure > div > div { background-position: 0% 40%; }
+      &:nth-child(4) figure > div > div { background-position: 0% 60%; }
+      &:nth-child(5) figure > div > div { background-position: 0% 80%; }
+      &:nth-child(6) figure > div > div { background-position: 0% 100%; }
+    }
+  }
+  
+  .active {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+  }
+  
+  .cf::before,
+  .cf::after {
+    content: "";
+    display: table;
+  }
+  
+  .cf::after {
+    clear: both;
+  }
+  
+  .cf {
+    zoom: 1;
+  }
+  
+  // Card styles
+  .card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 2rem;
+    margin-top: 27rem;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .card i {
+    color: #4e9fd1;
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+  
+  .card-text {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  // Circle
+  .circle-with-text {
+    width: 100px;
+    height: 100px;
+    background-color: #4e9fd1;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+/* Show only desktop layout on larger screens */
+.desktop-view {
+  display: block;
+}
+
+.mobile-view {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .desktop-view {
+    display: none !important;
+  }
+
+  .mobile-view {
+    display: block !important;
+  }
+  .display-4{
+    font-size: 1.5rem;
+  }
+  .lead{
+    font-size: 0.8rem;
+  }
+
+  
+  .carousel-fade .carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .carousel-fade .carousel-item.active {
+    opacity: 1;
+    position: relative; /* Makes the active one take up space */
+    z-index: 1;
+  }
+  
+}
+
+
+
