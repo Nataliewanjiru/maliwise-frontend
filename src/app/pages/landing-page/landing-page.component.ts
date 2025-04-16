@@ -33,6 +33,24 @@ export class LandingPageComponent {
     { title: 'Saving and Investment Goals', description: 'Track and set goals for your savings and investments.' }
   ];
   
+  testimonials = [
+    {
+      quote: 'Maliwise has completely changed how I manage my investments!',
+      name: 'Wanjiru K.',
+      title: 'Entrepreneur'
+    },
+    {
+      quote: 'Finally a tool that makes financial growth feel simple and achievable.',
+      name: 'Brian O.',
+      title: 'Software Engineer'
+    },
+    {
+      quote: 'I love how everything is organized and easy to track.',
+      name: 'Tiffany M.',
+      title: 'Student Investor'
+    }
+  ];
+  
   
 
   ngAfterViewInit() {

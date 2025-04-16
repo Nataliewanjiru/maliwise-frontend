@@ -1,7 +1,7 @@
 <div class="hero-section text-white d-flex flex-column justify-content-center align-items-center">
     <div class="overlay"></div>
     <div class="hero-content text-center">
-      <h1 style="color: #021024;"  class="display-4 fw-bold">Welcome to Maliwise-Smart Investment Managment</h1>
+      <h1 style="color: #021024; font-size: 35px;"  class="display-4 fw-bold">Welcome to Maliwise-Smart Investment Managment</h1>
       <div style="height: 10px;"></div>
       <p class="lead" >Smart portfolio management, simplified.</p>
       <a (click)="goToRegister()" class="btn btn-light mt-3" style="color:white; padding-right: 20px; padding-left: 20px;background-color: #021024; border: #021024; padding-top: 8px; padding-bottom: 8px;">Get Started</a>
@@ -9,7 +9,7 @@
   </div>
 
   <section class="key-features" style="background-color: #C1E8FF;">
-    <h2 style="padding-top: 30px; padding-bottom: 30px; color: #021024;" class="text-center mt-5 mb-4">Key Features</h2>
+    <h2 style="padding-top:90px; padding-bottom: 30px; color: #021024;" class="text-center mt-5 mb-4">Key Features</h2>
     <div class="slider--teams desktop-view" #sliderTeams>
       <div class="slider--teams__team">
         <ul id="list" class="cf" #list>
@@ -57,4 +57,50 @@
     </button>
   </div>
   
+  <section id="testimonials" class="py-5">
+    <div class="container text-center">
+      <h2 class="mb-4 fw-bold">What People Say</h2>
+      <p class="mb-4 text-muted">See what our users have to say about Maliwise.</p>
+  
+      <div class="border-0 shadow-sm mx-auto" style="max-width: 600px;  height: 20rem;">
+        <div class="card-body">
+          <p class="card-text fst-italic " style="padding-top:70px;">
+            "Maliwise has completely changed how I manage my investments!"
+          </p>
+          <h5 class="mt-3 mb-0" style="padding-top: 70px;">Wanjiru K.</h5>
+          <small class="text-muted">Entrepreneur</small>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="text-center text-white" style="background-color: #001f3f;">
+    <div class="container p-4 pb-0 ">
+      <section>
+        <form>
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-auto mb-4 mb-md-0">
+              <p class="pt-2 mb-0">
+                <strong>Sign up for our newsletter</strong>
+              </p>
+            </div>
+            <div class="col-md-5 col-12 mb-4 mb-md-0" >
+              <div class="form-outline">
+                <input type="email" id="form5Example26" class="form-control" placeholder="Enter your email" />
+              </div>
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-outline-light mb-4" style="color:white; padding-right: 20px; padding-left: 20px;background-color: #021024; border: #021024; padding-top: 8px; padding-bottom: 8px;">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(255, 255, 255, 0.05);">
+      © 2025 Maliwise. All rights reserved.
+    </div>
+  </footer>
   
