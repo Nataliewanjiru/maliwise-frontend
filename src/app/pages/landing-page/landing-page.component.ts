@@ -5,6 +5,11 @@ import { Router } from '@angular/router';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { trigger, style, animate, transition } from '@angular/animations';
 
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-landing-page',
@@ -47,6 +52,24 @@ export class LandingPageComponent {
     { title: 'Notifications and Alerts', description: 'Receive alerts about key changes in your portfolio.' },
     { title: 'Investment Recommendations', description: 'Automated suggestions based on your preferences.' },
     { title: 'Saving and Investment Goals', description: 'Track and set goals for your savings and investments.' }
+  ];
+
+  features2: Feature[] = [
+    {
+      icon: 'graph-up',
+      title: 'Smart Portfolio Analytics',
+      description: 'Real-time tracking and insights for informed decision-making'
+    },
+    {
+      icon: 'people',
+      title: 'Group Investment Tools',
+      description: 'Streamlined management for Chamas and Saccos'
+    },
+    {
+      icon: 'coin',
+      title: 'Curated Opportunities',
+      description: 'Access to pre-vetted investment options'
+    }
   ];
   
   testimonials = [
