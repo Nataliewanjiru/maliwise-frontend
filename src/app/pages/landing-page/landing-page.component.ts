@@ -2,12 +2,28 @@ import { AfterViewInit, Component, ElementRef, Renderer2,PLATFORM_ID,Inject, Vie
 import { CommonModule } from '@angular/common';  
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
+import { FooterComponent } from '../../components/footer/footer.component';
+import { trigger, style, animate, transition } from '@angular/animations';
+
 
 @Component({
   selector: 'app-landing-page',
-  imports: [CommonModule],
+  imports: [CommonModule,FooterComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
+  animations: [
+    trigger('slideLeft', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(-20px)' }),
+        animate('0.6s ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+      ])
+    ]),
+    trigger('slideRight', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateX(20px)' }),
+        animate('0.6s ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
+      ])
+    ])],
   standalone:true
 })
 export class LandingPageComponent {
