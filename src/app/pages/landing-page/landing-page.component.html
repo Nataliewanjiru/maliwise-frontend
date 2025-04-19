@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <section class="py-5 bg-white custom-container">
+  <section class="py-5 bg-light custom-container">
     <div class="container">
       <div class="row align-items-center">
         <!-- Text Content -->
@@ -48,15 +48,15 @@
   </section>
   
 
-  <section class="key-features custom-container" style="background-color: #C1E8FF;">
-    <h2 style="padding-top:90px; padding-bottom: 30px; color: #021024;" class="text-center mt-5 mb-4">Key Features</h2>
+  <section class=" bg-light custom-container" style="  padding-right: 48px; padding-bottom: 50px; height: 650px; margin-top: 55px;">
+    <h2 style="padding-top:90px; padding-bottom: 30px;  color: #021024;" class="text-center mt-5 mb-3">Key Features</h2>
     <div class="slider--teams desktop-view" #sliderTeams>
       <div class="slider--teams__team">
         <ul id="list" class="cf" #list>
           <li *ngFor="let feature of features">
             <figure>
-              <figcaption class="card">
-                <div class="card-body text-center">
+              <figcaption>
+                <div class="card-body text-center card">
                   <i class="fas fa-briefcase fa-3x mb-3"></i>
                   <div class="circle-with-text"><img src="assets/images/maliwise3.png"/></div>
                   <h5 class="card-title">{{ feature.title }}</h5>
@@ -74,8 +74,8 @@
   
 
 
-  <div id="mobileCarousel" class="carousel slide carousel-fade mobile-view" data-bs-touch="true"   data-bs-ride="carousel"
-  data-bs-interval="3000" style="background-color: #C1E8FF;" >
+  <div id="mobileCarousel" class="carousel slide bg-light carousel-fade mobile-view" data-bs-touch="true"   data-bs-ride="carousel"
+  data-bs-interval="3000" >
     <div class="carousel-inner">
       <div *ngFor="let feature of features; let i = index" class="carousel-item" [class.active]="i === 0">
         <div class="card floating-card mx-auto my-3" style="width: 90%;">
@@ -101,12 +101,12 @@
 
 
   
-  <section class="py-5 bg-light custom-container" style="color: #001f3f;">
+  <section class="py-5 bg-light custom-container " style="color: #001f3f;">
     <div class="container ">
       <div class="row text-center mb-4">
         <div class="col-12 col-lg-10 col-xl-8 mx-auto">
           <h2 style="color: #001f3f; padding: 30px;">How Maliwise Works</h2>
-          <p class="lead mb-4 text-center mx-auto text-muted small" style="width: 80%;">
+          <p class=" mb-4 text-center mx-auto" style="width: 80%;">
             With just a few simple steps, Maliwise helps you track your finances, set goals, and grow your portfolio effortlessly.
           </p>
         </div>
@@ -117,7 +117,7 @@
           <div class="row">
             <div class="col-lg-4">
               <div class="text-center position-relative">
-                <div class="step-icon mx-auto border border-2 border rounded-circle d-flex align-items-center justify-content-center" style="width:150px; height:150px;">
+                <div class="step-icon mx-auto border border-2 border rounded-circle d-flex align-items-center justify-content-center" style="width:150px; height:150px; background-color: #001f3f;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle text-secondary" viewBox="0 0 16 16">
                     <path d="M13.468 12.37C12.758 11.226 11.39 10.5 10 10.5H6c-1.39 0-2.758.726-3.468 1.87A6.987 6.987 0 0 0 8 15a6.987 6.987 0 0 0 5.468-2.63z"/>
                     <path fill-rule="evenodd" d="M8 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -136,7 +136,7 @@
   
             <div class="col-lg-4">
               <div class="text-center position-relative">
-                <div class="step-icon mx-auto border border-2 border rounded-circle d-flex align-items-center justify-content-center" style="width:150px; height:150px;">
+                <div class="step-icon mx-auto border border-2 border rounded-circle d-flex align-items-center justify-content-center" style="width:150px; height:150px; background-color: #001f3f;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-graph-up-arrow text-secondary" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm14 10.5a.5.5 0 0 0-.5-.5H10.707l-3.5-3.5a.5.5 0 0 0-.707 0l-2.5 2.5L2 7.207l.707-.707L4.5 8.293l2.146-2.147 3.646 3.647H13.5a.5.5 0 0 0 .5-.5z"/>
                   </svg>
@@ -153,7 +153,7 @@
   
             <div class="col-lg-4">
               <div class="text-center">
-                <div class="step-icon mx-auto border border-2 border rounded-circle d-flex align-items-center justify-content-center" style="width:150px; height:150px;">
+                <div class="step-icon mx-auto border border-2 border rounded-circle d-flex align-items-center justify-content-center" style="width:150px; height:150px; background-color: #001f3f;">
                   <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-stars text-secondary" viewBox="0 0 16 16">
                     <path d="M7.5.25a.5.5 0 0 1 .5.5v3.793l.854-.853a.5.5 0 0 1 .707.707L8.207 5.75l1.354 1.354a.5.5 0 1 1-.707.707L7.5 6.457v3.793a.5.5 0 0 1-1 0V6.457l-1.354 1.354a.5.5 0 1 1-.707-.707L6.793 5.75 5.439 4.396a.5.5 0 1 1 .707-.707l.854.853V.75a.5.5 0 0 1 .5-.5z"/>
                     <path d="M2.5 10.75a.5.5 0 0 1 .5.5v1.793l.854-.853a.5.5 0 0 1 .707.707L3.707 13.5l1.354 1.354a.5.5 0 1 1-.707.707L3.5 14.207V16a.5.5 0 0 1-1 0v-1.793l-1.354 1.354a.5.5 0 1 1-.707-.707L2.293 13.5.939 12.146a.5.5 0 1 1 .707-.707l.854.853V11.25a.5.5 0 0 1 .5-.5z"/>

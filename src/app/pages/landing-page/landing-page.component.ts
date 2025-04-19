@@ -5,10 +5,20 @@ import { Router } from '@angular/router';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { trigger, style, animate, transition } from '@angular/animations';
 
+
 interface Feature {
   icon: string;
   title: string;
   description: string;
+}
+
+interface UserCategoryCardProps {
+  icon: string;
+  title: string;
+  description: string;
+  bgColor?: string;
+  iconColor?: string;
+  delay?: number;
 }
 
 @Component({
