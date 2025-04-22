@@ -87,10 +87,6 @@
       overflow: hidden;
     }
   }
-  .slider--teams.desktop-view {
-    margin-top: 15rem;
-}
-  
   #list {
     position: relative;
     backface-visibility: hidden;
@@ -199,6 +195,7 @@
 /* Show only desktop layout on larger screens */
 .desktop-view {
   display: block;
+  margin-top: 13rem;
 }
 
 .mobile-view {
@@ -208,6 +205,7 @@
 @media (max-width: 700px) {
   .desktop-view {
     display: none !important;
+    
   }
 
   .mobile-view {
@@ -254,5 +252,8 @@
   padding-left: 3rem;
   padding-right: 2rem;
 }
+
+
+
 
 

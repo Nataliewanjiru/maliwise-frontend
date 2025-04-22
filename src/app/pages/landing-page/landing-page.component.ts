@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Renderer2,PLATFORM_ID,Inject, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2,PLATFORM_ID,Inject, ViewChild,Input } from '@angular/core';
 import { CommonModule } from '@angular/common';  
 import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
@@ -13,7 +13,7 @@ interface Feature {
 }
 
 interface UserCategoryCardProps {
-  icon: string;
+  icon: any;
   title: string;
   description: string;
   bgColor?: string;
@@ -205,4 +205,6 @@ export class LandingPageComponent {
   goToRegister() {
     this.router.navigate(['/register']);
   }
+
+  
 }
