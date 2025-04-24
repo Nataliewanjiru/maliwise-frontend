@@ -292,12 +292,37 @@
 }
 
 
-.icon-circle {
-  width: 70px;
-  height: 70px;
-  background-color: white;
-  border-radius: 50%;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+.faded-card-container {
+  position: relative !important;
+  background-color: whitesmoke;
+  color: #001f3f;
+  height: 100%;
+  display: flex; /* Enable flexbox on the card container */
+  flex-direction: column; /* Stack children vertically */
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
+.content-bottom {
+  position: relative; /* For potential z-index */
+  z-index: 10;
+  color: #fff;
+  margin-top: auto; /* Push content to the bottom */
+  padding-bottom: 15px; /* Add some spacing at the bottom */
+}
+
+.card-body {
+  padding: 1rem; /* Adjust as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Push content to the end of the flex container */
+  align-items: center; /* Center items horizontally */
+  height: 100%; /* Ensure it takes full height within the card */
+}

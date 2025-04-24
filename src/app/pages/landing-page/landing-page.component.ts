@@ -84,25 +84,19 @@ export class LandingPageComponent {
       icon:"bi bi-graph-up-arrow fs-1 text-success mb-3",
       title: 'New Investors',
       description: 'Start investing smartly even with little experience.',
-      bgColor: 'bg-maliwise-soft-purple',
-      iconColor: 'text-maliwise-purple',
-      delay: 100
+      backgroundImage: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbusinesstoday.co.ke%2Fwp-content%2Fuploads%2F2021%2F08%2FRichest-people-in-Kenya-and-NSE-768x768.png&f=1&nofb=1&ipt=d08087119f3902e702796e3a17243465639410292a0a1c1ab81de483b989411e'
     },
     {
       icon:"bi bi-people fs-1 text-primary mb-3",
-      title: 'Sacco Members',
+      title: 'Professionals',
       description: 'Track group savings and individual investments with ease.',
-      bgColor: 'bg-maliwise-soft-blue',
-      iconColor: 'text-blue-600',
-      delay: 300
+      backgroundImage: 'https://cdn.pixabay.com/photo/2021/09/26/11/44/chair-6657317_960_720.jpg'
     },
     {
       icon: 'bi bi-briefcase fs-1 text-success mb-3',
       title: 'Business Owners',
       description: "Monitor your company's investment growth efficiently.",
-      bgColor: 'bg-maliwise-soft-green',
-      iconColor: 'text-green-600',
-      delay: 500
+      backgroundImage: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnation.africa%2Fresource%2Fimage%2F224618%2Flandscape_ratio3x2%2F1200%2F800%2Fb0097a2c81fcd880a68d63b949879726%2FCU%2Ffarmersimage.jpg&f=1&nofb=1&ipt=f8b51b9f685a5c18872395b9c25ea6e725d45b73285b572719cf163fa554bf0a',
     }
   ];
 
