@@ -4,6 +4,8 @@ import { isPlatformBrowser } from '@angular/common';
 import { Router } from '@angular/router';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { LucideAngularModule } from 'lucide-angular';
+
 
 
 interface Feature {
@@ -12,18 +14,11 @@ interface Feature {
   description: string;
 }
 
-interface UserCategoryCardProps {
-  icon: any;
-  title: string;
-  description: string;
-  bgColor?: string;
-  iconColor?: string;
-  delay?: number;
-}
+
 
 @Component({
   selector: 'app-landing-page',
-  imports: [CommonModule,FooterComponent],
+  imports: [ LucideAngularModule,CommonModule,FooterComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
   animations: [
@@ -81,7 +76,36 @@ export class LandingPageComponent {
       description: 'Access to pre-vetted investment options'
     }
   ];
+
+
   
+  categories = [
+    {
+      icon:"bi bi-graph-up-arrow fs-1 text-success mb-3",
+      title: 'New Investors',
+      description: 'Start investing smartly even with little experience.',
+      bgColor: 'bg-maliwise-soft-purple',
+      iconColor: 'text-maliwise-purple',
+      delay: 100
+    },
+    {
+      icon:"bi bi-people fs-1 text-primary mb-3",
+      title: 'Sacco Members',
+      description: 'Track group savings and individual investments with ease.',
+      bgColor: 'bg-maliwise-soft-blue',
+      iconColor: 'text-blue-600',
+      delay: 300
+    },
+    {
+      icon: 'bi bi-briefcase fs-1 text-success mb-3',
+      title: 'Business Owners',
+      description: "Monitor your company's investment growth efficiently.",
+      bgColor: 'bg-maliwise-soft-green',
+      iconColor: 'text-green-600',
+      delay: 500
+    }
+  ];
+
   testimonials = [
     {
       quote: 'Maliwise has completely changed how I manage my investments!',
