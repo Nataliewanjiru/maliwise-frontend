@@ -5,7 +5,8 @@ import { Router } from '@angular/router';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { trigger, style, animate, transition } from '@angular/animations';
 import { LucideAngularModule } from 'lucide-angular';
-
+import { UserService } from '../../service/user.service';
+import { FormsModule, NgForm } from '@angular/forms';
 
 
 interface Feature {
@@ -18,7 +19,7 @@ interface Feature {
 
 @Component({
   selector: 'app-landing-page',
-  imports: [ LucideAngularModule,CommonModule,FooterComponent],
+  imports: [ LucideAngularModule,CommonModule,FooterComponent,FormsModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
   animations: [
@@ -48,8 +49,9 @@ export class LandingPageComponent {
   acAuto = 2500;
   autoSlider: any;
 
-  constructor(private renderer: Renderer2,public router: Router,private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(public userService: UserService,private renderer: Renderer2,public router: Router,private el: ElementRef, @Inject(PLATFORM_ID) private platformId: Object) {}
 
+  
   features = [
     { title: 'Portfolio Management', description: 'Manage multiple investment portfolios with ease.' },
     { title: 'Investment Tracking', description: 'Track your investment real time' },
@@ -140,6 +142,7 @@ export class LandingPageComponent {
       }
   }
 
+  emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   initWidth() {
     const list = this.list.nativeElement;
     this.renderer.setStyle(list, 'margin-left', `${~~(100 / this.nView)}%`);
@@ -224,5 +227,28 @@ export class LandingPageComponent {
     this.router.navigate(['/register']);
   }
 
+  showSuccess = false;
+  showError = false;
   
-}
+  addToWishlist(form:NgForm) {
+    if (!form.valid) return;
+
+    this.showSuccess = false;
+    this.showError = false;
+
+    this.userService.sendWishlistNotification()
+      .then(() => {
+        this.showSuccess = true;
+        form.resetForm();
+        setTimeout(() => window.location.reload(), 5000);
+      })
+      .catch(() => {
+        this.showError = true;
+        setTimeout(() => window.location.reload(), 5000);
+      });
+  }
+
+
+  }
+  
+

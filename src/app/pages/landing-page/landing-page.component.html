@@ -233,7 +233,7 @@
       <div class="border-0 shadow-sm mx-auto" style="max-width: 600px;  height: 20rem; background-color: white;">
         <div class="card-body">
           <p class="card-text fst-italic " style="padding-top:70px;">
-            "Maliwise has completely changed how I manage my investments!"
+            "I have been struggling to find a way to manage my investments.Hoping Maliwise will take us away from the unending spreedsheets!"
           </p>
           <h5 class="mt-3 mb-0" style="padding-top: 70px;">Wanjiru K.</h5>
           <small class="text-muted">Entrepreneur</small>
@@ -241,5 +241,55 @@
       </div>
     </div>
   </section>
+  <div class="modal fade" id="wishlistInterestModal" tabindex="-1" aria-labelledby="wishlistInterestModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <div class="modal-header">
+          <h5 class="modal-title" id="wishlistInterestModalLabel">Interested in adding this to your Wishlist?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+  
+        <div class="modal-body">
+          <p>The wishlist feature is coming soon! To be notified when it's available and this item is added, enter your email below.</p>
+  
+          <form #wishForm="ngForm" (ngSubmit)="addToWishlist(wishForm)" id="wishlistInterestForm" class="row g-3">
+            <div class="col-12">
+              <label for="emailInput" class="form-label">Your Email</label>
+              <input type="email"
+                     id="emailInput"
+                     name="email"
+                     class="form-control"
+                     [(ngModel)]="userService.wishUser.email"
+                     #email="ngModel"
+                     required
+                     email
+                     [ngClass]="{'is-invalid': wishForm.submitted && email.invalid}" />
+  
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+  
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Notify Me</button>
+            </div>
+          </form>
+  
+          <div *ngIf="showSuccess" class="mt-3 text-success">
+            Thank you! We'll let you know when the wishlist feature is ready.
+          </div>
+  
+          <div *ngIf="showError" class="mt-3 text-danger">
+            Oops! Something went wrong. Please try again later.
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+  
+  
   
   <app-footer></app-footer>
+  

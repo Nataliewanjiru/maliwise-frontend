@@ -4,9 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
 import  { jwtDecode } from 'jwt-decode';
-
-
-
+import emailjs from '@emailjs/browser';
 
 
 interface DecodedToken {
@@ -31,6 +29,10 @@ export class UserService {
     password:"",
   };
 
+  wishUser:any ={
+    email:"",
+  };
+
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
 
   constructor(private http: HttpClient) { }
@@ -52,6 +54,21 @@ export class UserService {
     });
 }
 
+
+ sendWishlistNotification(): Promise<void> {
+  const templateParams = {
+    user_email: this.wishUser.email
+  };
+
+  return emailjs.send(environment.YOUR_SERVICE_ID, environment.YOUR_TEMPLATE_ID, templateParams, environment.YOUR_USER_ID)
+    .then(() => {
+      console.log('Email sent successfully');
+    })
+    .catch((error: any) => {
+      console.error('Email failed to send:', error);
+      throw error;
+    });
+} 
 
 private decodeTokenLib(token: string): DecodedToken {
     return Decode<DecodedToken>(token);

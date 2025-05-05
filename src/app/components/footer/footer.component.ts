@@ -11,9 +11,5 @@ export class FooterComponent {
   currentYear: number = new Date().getFullYear();
 
 
-
-  addToWishlist() {
-    alert('Added to your wishlist!');
-  }
   
 }

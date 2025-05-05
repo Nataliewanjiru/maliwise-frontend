@@ -28,14 +28,14 @@ export class LoginPageComponent {
 
   ngOnInit() {
     if(this.userService.isLoggedIn())
-    this.router.navigateByUrl('/userprofile');
+    this.router.navigateByUrl('/dashboard');
   }
 
   onSubmit(form : NgForm){
     this.userService.login(form.value).subscribe(
       (      res: { [x: string]: any; }) => {
         this.userService.setToken(res['token']);
-        this.router.navigateByUrl('/userprofile');
+        this.router.navigateByUrl('/dashboard');
       },
       (      err: { error: { message: string | undefined; }; }) => {
         this.serverErrorMessages = err.error.message;
