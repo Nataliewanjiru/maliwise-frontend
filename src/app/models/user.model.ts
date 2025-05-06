@@ -5,4 +5,5 @@ export class User {
     password!:string;
     userpicture!:string;
     createdAt?:string;
+    
 }
